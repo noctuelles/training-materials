@@ -315,12 +315,18 @@ mkdir -p board/bootlin/training/rootfs-overlay/
 \end{bashinput}
 
 Then add a custom startup script, by adding an \code{etc/init.d/S03modprobe}
-executable file to the overlay directory, with the below contents:
+file to the overlay directory, with the below contents:
 
 \begin{verbatim}
 #!/bin/sh
 modprobe snd-usb-audio
 \end{verbatim}
+
+Make it executable :
+
+\begin{bashinput}
+chmod +x board/bootlin/training/rootfs-overlay/etc/init.d/S03modprobe
+\end{bashinput}
 
 Then, go back to Buildroot's configuration interface:
 \begin{itemize}
